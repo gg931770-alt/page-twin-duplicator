@@ -60,35 +60,85 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <style id="inpullse-desktop-align-css">
 /* Desktop-only alignment fix for hero (texto + formulário lado a lado) */
 @media (min-width: 1025px) {
+	/* Container hero: força layout em duas colunas com respiro */
 	.elementor-9156 .elementor-element.elementor-element-81e299d > .e-con-inner{
-		display:flex;
-		flex-direction:row;
-		flex-wrap:nowrap;
-		justify-content:center;
-		align-items:stretch;
-		gap:48px;
-		max-width:1200px;
-		margin:0 auto;
-		width:100%;
+		display:flex !important;
+		flex-direction:row !important;
+		flex-wrap:nowrap !important;
+		justify-content:center !important;
+		align-items:center !important;
+		gap:80px !important;
+		max-width:1200px !important;
+		margin:0 auto !important;
+		width:100% !important;
+		padding-left:24px !important;
+		padding-right:24px !important;
 	}
+	/* Coluna de texto */
 	.elementor-9156 .elementor-element.elementor-element-f5d4889{
-		flex:1 1 0;
-		max-width:600px;
-		min-width:0;
-		align-self:center;
+		flex:1 1 0 !important;
+		max-width:560px !important;
+		min-width:0 !important;
+		width:auto !important;
+		align-self:center !important;
 	}
+	/* Coluna do formulário */
 	.elementor-9156 .elementor-element.elementor-element-9d99057{
-		flex:1 1 0;
-		max-width:520px;
-		min-width:0;
-		align-self:center;
-		margin:0;
+		flex:0 0 460px !important;
+		max-width:460px !important;
+		min-width:0 !important;
+		width:460px !important;
+		align-self:center !important;
+		margin:0 !important;
+		--padding-left:28px !important;
+		--padding-right:28px !important;
+		--padding-top:32px !important;
+		--padding-bottom:32px !important;
+		--min-height:auto !important;
+		box-sizing:border-box !important;
 	}
+	/* Garante que os títulos da coluna de texto ocupem a coluna toda */
 	.elementor-9156 .elementor-element.elementor-element-43a327d,
 	.elementor-9156 .elementor-element.elementor-element-61401f2,
 	.elementor-9156 .elementor-element.elementor-element-a32a827{
-		width:100%;
-		max-width:100%;
+		width:100% !important;
+		max-width:100% !important;
+	}
+	/* Form widget: contém os campos dentro do card */
+	.elementor-9156 .elementor-element.elementor-element-8dccf96{
+		width:100% !important;
+		max-width:100% !important;
+	}
+	.elementor-9156 .elementor-element.elementor-element-8dccf96 .elementor-form-fields-wrapper{
+		margin-left:0 !important;
+		margin-right:0 !important;
+		display:flex;
+		flex-wrap:wrap;
+		gap:14px 0;
+	}
+	.elementor-9156 .elementor-element.elementor-element-8dccf96 .elementor-field-group{
+		padding-left:0 !important;
+		padding-right:0 !important;
+		margin-bottom:0 !important;
+		width:100% !important;
+		max-width:100% !important;
+		flex:1 1 100% !important;
+		min-width:0 !important;
+		box-sizing:border-box;
+	}
+	.elementor-9156 .elementor-element.elementor-element-8dccf96 .elementor-field,
+	.elementor-9156 .elementor-element.elementor-element-8dccf96 textarea,
+	.elementor-9156 .elementor-element.elementor-element-8dccf96 select{
+		width:100% !important;
+		max-width:100% !important;
+		box-sizing:border-box !important;
+	}
+	/* Telefone (intl-tel-input) também respeita 100% da largura */
+	.elementor-9156 .elementor-element.elementor-element-8dccf96 .iti,
+	.elementor-9156 .elementor-element.elementor-element-8dccf96 .iti__tel-input{
+		width:100% !important;
+		max-width:100% !important;
+		box-sizing:border-box !important;
 	}
 }
 </style>
